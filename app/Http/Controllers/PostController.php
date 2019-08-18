@@ -72,11 +72,6 @@ class PostController extends Controller
         $likeCtr = Like::where(['post_id' => $likePost->id])->count();
         $dislikeCtr = Dislike::where(['post_id' => $likePost->id])->count();
 
-//        return $likeCtr;
-//        exit();
-//        $likepost =Post::find($post_id);
-//              $likeCtr = Like::where('post_id',$post_id)->count();
-//        $dislikeCtr = Dislike::where(['post_id'=>$likepost->id])->count();
 
         $categories = Category::all();
         $comments = DB::table('users')
