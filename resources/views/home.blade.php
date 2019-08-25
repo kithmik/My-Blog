@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-2">
-            <div class="card">
+            <div class="card shadow">
                 <div class="panel-default text-center">
                 @if (count($errors) > 0)
                     @foreach($errors->all() as $error)
@@ -76,7 +76,9 @@
                     <div class="col-md-8">
                         @if(count($posts) >0)
                             @foreach($posts->all() as $post)
-                                <h4>{{ $post->post_title }}</h4>
+                            <div class="card shadow">
+
+                            <h4>{{ $post->post_title }}</h4>
                                 <img src="{{ $post->post_image }}" alt="" height="200px" width="200px">
                                 <p>{{ substr($post->post_body, 0,150)  }}</p>
 
@@ -97,6 +99,9 @@
                                     @endif
                             </ul>
                             <cite style="">Posted on: {{ date('M j,Y H:i', strtotime($post->updated_at)) }}</cite>
+
+                            </div>
+                                
                                 <hr>
                             @endforeach
                             @else
